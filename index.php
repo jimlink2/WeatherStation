@@ -73,7 +73,7 @@
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <meta http-equiv='refresh' content='60'>
+  <meta http-equiv='refresh' content='30'>
   <title>Rockwall Weather</title>
   <style>
   body {
