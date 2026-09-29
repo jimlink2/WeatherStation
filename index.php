@@ -50,10 +50,12 @@
 			  $windspd = $row['windspd'];
 			  $windlast = $row['windlast'];
 			  $windgust = $row['windgust'];
-			  $rainrate = $row['rainrate'];
-			  $rainday = $row['rainday'];
-			  $time = $row['time'];
-			  $nextupl = $row['nextupl'];
+        $rainrate = $row['rainrate'];
+        $rainday = $row['rainday'];
+        $raintips = $row['raintips'];
+        $outuptime = $row['outuptime'];
+        $time = $row['time'];
+        $nextupl = $row['nextupl'];
 			  $lastconn = $row['lastconn'];
 			  $WUstat = $row['WUstat'];
 		  }
@@ -66,6 +68,22 @@
 		  } else {
 		    $statColor = '900';
 		  }
+		  $outDays = floor($outuptime / 86400);
+      $outHours = floor(($outuptime % 86400) / 3600);
+      $outMinutes = floor(($outuptime % 3600) / 60);
+      $outSeconds = $outuptime % 60;
+
+      $outUptimeDisp = '';
+
+      if ($outDays > 0) {
+          $outUptimeDisp .= $outDays . 'd ';
+      }
+
+      if ($outHours > 0 || $outDays > 0) {
+          $outUptimeDisp .= $outHours . 'h ';
+      }
+
+      $outUptimeDisp .= $outMinutes . 'm ' . $outSeconds . 's';
 		}
 ?>
 <!DOCTYPE html>
@@ -137,16 +155,40 @@
     </div>
   </div>
   <div class='card'>
+      <div class='label'>
+        Rain
+      </div>
+
+      <div class='value'>
+        Rate: <?php echo number_format($rainrate,2); ?> in/hr
+      </div>
+
+      <div class='value'>
+        Day: <?php echo number_format($rainday,2); ?> in
+      </div>
+
+      <div class='noemph'>
+        Rain gauge tips: <?php echo (int)$raintips; ?>
+      </div>
+  </div>
+  <div class='card'>
     <div class='label'>
-      Rain
+      Outdoor Station
     </div>
-    <div class='value'>
-      Rate: <?php echo number_format($rainrate,2); ?> in/hr
+
+    <div class='noemph'>
+      C3 uptime: <?php echo $outUptimeDisp; ?>
     </div>
-    <div class='value'>
-      Day: <?php echo number_format($rainday,2); ?> in
+
+    <div class='noemph'>
+      Uptime seconds: <?php echo (int)$outuptime; ?>
+    </div>
+
+    <div class='noemph'>
+      Rain gauge tips: <?php echo (int)$raintips; ?>
     </div>
   </div>
+  
   <div class='card'>
     <div class='label'>
       Time

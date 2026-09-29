@@ -17,6 +17,8 @@ if (isset($_GET['temp']) && !empty($_GET['temp'])) {
   $windgust = $_GET['windgust'];
   $rainrate = $_GET['rainrate'];
   $rainday = $_GET['rainday'];
+  $raintips = $_GET['raintips'];
+  $outuptime = $_GET['outuptime'];
   $time = $_GET['time'];
   $nextupl = $_GET['nextupl'];
   $lastconn = $_GET['lastconn'];
@@ -49,6 +51,8 @@ INSERT INTO %s
 ,windgust
 ,rainrate
 ,rainday
+,raintips
+,outuptime
 ,time
 ,nextupl
 ,lastconn
@@ -70,6 +74,8 @@ VALUES
 ,%d
 ,%f
 ,%f
+,%d
+,%d
 ,'%s'
 ,'%s'
 ,%d
@@ -90,6 +96,8 @@ VALUES
     $windgust,
     $rainrate,
     $rainday,
+    $raintips,
+    $outuptime,
     $time,
     $nextupl,
     $lastconn,
