@@ -123,11 +123,11 @@
       <?php echo number_format($dewpt, 1); ?>
     </div>
     <div class='noemph'>
-      Humidity: <?php echo $humidity ?> %
-    </div>
-    <div class='noemph'>
       Moisture content: <?php echo $moistDisp ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dew
       potential: <?php echo $dewDisp ?>
+    </div>
+    <div class='noemph'>
+      Humidity: <?php echo $humidity ?> %
     </div>
   </div>
   <div class='card'>
