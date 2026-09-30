@@ -19,6 +19,7 @@ if (isset($_GET['temp']) && !empty($_GET['temp'])) {
   $rainday = $_GET['rainday'];
   $raintips = $_GET['raintips'];
   $outuptime = $_GET['outuptime'];
+  $date = $_GET['date'];
   $time = $_GET['time'];
   $nextupl = $_GET['nextupl'];
   $lastconn = $_GET['lastconn'];
@@ -53,6 +54,7 @@ INSERT INTO %s
 ,rainday
 ,raintips
 ,outuptime
+,date
 ,time
 ,nextupl
 ,lastconn
@@ -78,6 +80,7 @@ VALUES
 ,%d
 ,'%s'
 ,'%s'
+,'%s'
 ,%d
 ,%d
 )", TABLENAME,
@@ -98,6 +101,7 @@ VALUES
     $rainday,
     $raintips,
     $outuptime,
+    $date,
     $time,
     $nextupl,
     $lastconn,
