@@ -172,10 +172,6 @@
       <div class='value'>
         Day: <?php echo number_format($rainday,2); ?> in
       </div>
-
-      <div class='noemph'>
-        Rain gauge tips: <?php echo (int)$raintips; ?>
-      </div>
   </div>
   <div class='card'>
     <div class='label'>
