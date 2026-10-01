@@ -110,7 +110,13 @@
       Temperature
     </div>
     <div class='value'>
-      <?php echo number_format($rawtemp, 1); ?>°F &nbsp;&nbsp;&nbsp; 
+      <?php echo number_format($rawtemp, 1); ?>°F
+      <?php
+          if ($adjfactor != 1.000) {
+            echo " * ";
+          }
+       ?>
+       &nbsp;&nbsp;&nbsp; 
       <span class='noemph'>Uploaded temp: <?php echo number_format($temp, 1); ?>°F &nbsp;&nbsp;&nbsp; 
         Adj factor: <?php echo number_format($adjfactor, 3); ?></span>
     </div>
