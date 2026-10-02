@@ -140,11 +140,11 @@
     <div class='label'>
       Pressure
     </div>
-    <div class='noemph'>
-      <?php echo number_format($presshpa,1,'.',''); ?> hPa
-    </div>
     <div class='value'>
       <?php echo number_format($pressinhg,2); ?> inHg
+    </div>
+    <div class='noemph'>
+      <?php echo number_format($presshpa,1,'.',''); ?> hPa
     </div>
   </div>
   <div class='card'>
@@ -164,13 +164,11 @@
       <div class='label'>
         Rain
       </div>
-
-      <div class='value'>
-        Rate: <?php echo number_format($rainrate,2); ?> in/hr
-      </div>
-
       <div class='value'>
         Day: <?php echo number_format($rainday,2); ?> in
+      </div>
+      <div class='noemph'>
+        Rate: <?php echo number_format($rainrate,2); ?> in/hr
       </div>
   </div>
   <div class='card'>
@@ -198,7 +196,7 @@
     <div class='value'>
       <?php echo $time ?>
     </div>
-    <div style='font-size:20px;' class='value'>
+    <div style='font-size:20px;' class='noemph'>
       Next upload time: <?php echo $nextupl ?>
     </div>
   </div>
