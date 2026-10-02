@@ -177,11 +177,7 @@
     </div>
 
     <div class='noemph'>
-      C3 uptime: <?php echo $outUptimeDisp; ?>
-    </div>
-
-    <div class='noemph'>
-      Uptime seconds: <?php echo (int)$outuptime; ?>
+      C3 uptime: <?php echo $outUptimeDisp; ?> (<?php echo number_format($outuptime); ?> seconds)
     </div>
 
     <div class='noemph'>
